@@ -1,0 +1,103 @@
+// Less：中文含义比较少的，实际上 它是动态的CSS
+// Less可以使用变量、混合、嵌套、运算等等
+// Less文件的扩展名是 .less ，传统的浏览器无法识别，需要编译成.css
+// 1、使用less.min.js 自动编译
+// 编译的方法如下：
+// 要求：自己编写的less文件出现在less.min.js前面
+
+// 2、使用HBuilder编译less文件
+// 3、在node.js使用npm全局安装less（nmp i less -g）,然后使用
+// lessc命令编译 lessc style.less style.css
+// 4、使用koala国产软件, 同步处理
+//#header {
+//  width: @width;
+//  height: @height;
+//  background: @background;
+//  
+//  .bordered();
+//  
+//}
+//
+//.bordered {
+//  border-top: dotted 1px black;
+//  border-bottom: solid 2px black;
+//}
+//
+//#menu a {
+//  color: #111;
+//  .bordered();
+//}
+//
+//.post a {
+//  color: red;
+//  .bordered();
+//}
+//
+////#header {
+////  color: black;
+////}
+////#header .navigation {
+////  font-size: 12px;
+////}
+//
+//#header {
+//  color: black;
+//  .navigation {
+//      font-size: 12px;
+//      display: float;
+//  }
+////}
+//@width: 100px;
+//@height: 100px;
+//
+//#header {
+//  color: orange;
+//  .navigation {
+//      font-size: 12px;
+//      width: @width;
+//      height: @height;
+//      background: cornflowerblue;
+//      float: left;
+//  }
+//  .clearfix();
+//}
+//
+//.clearfix {
+//  display: block;
+//  zoom: 1;
+//  
+//  &:after {
+//      content: " ";
+//      display: block;
+//      clear: both;
+//      height: 0;
+//      font-size: 0;
+//      visibility: hidden;
+//  }
+//}
+
+@red-color: orange;
+@width-200: 200px;
+
+#header {
+    width:@width-200;
+    height:400px;
+    background-color: @red-color;
+    .logo {
+        width: @width-200*2;
+        height: @width-200;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    ul {
+        list-style: none;
+        li {
+            width: @width-200*0.4;
+            height: @width-200*0.15;
+            line-height: @width-200*0.15;
+           
+        }
+    }
+}
+
+
